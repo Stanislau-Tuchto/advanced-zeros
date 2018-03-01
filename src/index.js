@@ -1,15 +1,17 @@
 module.exports = function getZerosCount(number, base) {
   // your implementation
-    let zeros = 0, i = 1,j=2, five_pow ,primal,flag = true;
+    let zeros = 0, i = 1,j=2, n=0,five_pow ,primal,flag = true;
     while(j<=Math.sqrt(base)){
         if(base%j === 0){
             base = base/j;
-           
+          
+           n++;
           }else{
               j++;
+            n=0;
             }
        
-      }
+      }if(j=base)n++;
  
     while(flag) {
         five_pow = Math.pow(base,i)
@@ -18,5 +20,5 @@ module.exports = function getZerosCount(number, base) {
             i++;
         }else flag=false;
     }
-    return zeros
+    return (zeros-zeros%n)/n
 }
